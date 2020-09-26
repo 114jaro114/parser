@@ -35,8 +35,8 @@
       <div class="form-group">
        <table class="table">
         <tr>
-         <td width="40%" align="right"><label>Select File for Uploadd</label></td>
-         <td width="30">
+         <td width="40%" class="align-middle" align="right"><span>Select File for Uploadd</span></td>
+         <td width="30" class="align-middle">
           <input type="file" name="select_file" />
          </td>
          <td width="30%" align="left">
@@ -45,7 +45,7 @@
         </tr>
         <tr>
          <td width="40%" align="right"></td>
-         <td width="30"><span class="text-muted">.xls, .xslx</span></td>
+         <td width="30"><span class="text-muted"></span></td>
          <td width="30%" align="left"></td>
         </tr>
        </table>

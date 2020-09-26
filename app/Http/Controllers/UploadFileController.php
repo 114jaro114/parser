@@ -23,8 +23,10 @@ class UploadFileController extends Controller
      $this->validate($request, [
       'select_file'  => 'required|mimes:xls,xlsx'
      ]);
-     
-     DB::table('faktury')->delete();
+
+     // DB::table('faktury')->delete();
+     // Truncate the table.
+     DB::table('faktury')->truncate();
      $data = Excel::import(new InvoiceImport, $request->file('select_file'));
      // return back();
      // $rows = Excel::toArray(new InvoiceImport, $request->file('select_file'));

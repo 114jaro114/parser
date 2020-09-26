@@ -17,9 +17,6 @@ use App\Http\Controllers\UploadFileController;
 Route::get('/', function () {
     return view('welcome');
 });
-//
-// Route::get('/import', [UploadFileController::class, 'index']);
-// Route::post('/import', [UploadFileController::class, 'showUploadFile']);
 
 Route::get('/import_excel', [UploadFileController::class, 'index']);
 Route::post('/import_excel/import', [UploadFileController::class, 'import']);
