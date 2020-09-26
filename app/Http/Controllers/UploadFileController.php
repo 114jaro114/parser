@@ -14,7 +14,7 @@ use Rap2hpoutre\FastExcel\FastExcel;
 class UploadFileController extends Controller
 {
     function index() {
-      $data = DB::table('faktury')->paginate(10);
+      $data = DB::table('faktury')->simplePaginate(10);
       return view('import_excel', compact('data'));
       // return view('import_excel');
     }

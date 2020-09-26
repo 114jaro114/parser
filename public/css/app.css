@@ -10921,3 +10921,8 @@ a.text-dark:focus {
   white-space: nowrap;
 }
 
+.table-import {
+  width: 55%;
+  margin: auto;
+}
+

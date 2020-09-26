@@ -9,7 +9,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-  <div class="container pt-3 pb-3">
+  <div class="p-5">
     <h3 align="center"> Import Excel File on upload. Formats: .xlsx, .xls</h3>
     <br />
      @if(count($errors) > 0)
@@ -33,9 +33,9 @@
      <form method="post" enctype="multipart/form-data" action="{{ url('/import_excel/import') }}">
       {{ csrf_field() }}
       <div class="form-group">
-       <table class="table">
+       <table class="table table-import">
         <tr>
-         <td width="40%" class="align-middle" align="right"><span>Select File for Uploadd</span></td>
+         <td width="40%" class="align-middle pr-4" align="right"><span>Select File for Upload</span></td>
          <td width="30" class="align-middle">
           <input type="file" name="select_file" />
          </td>
@@ -83,9 +83,11 @@
            </tr>
            @endforeach
           </table>
-          {{ $data->links() }}
        </div>
       </div>
+     </div>
+     <div class="text-center pt-3">
+       {{ $data->Links() }}
      </div>
     </div>
   </div>
