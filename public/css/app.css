@@ -10932,3 +10932,7 @@ a.text-dark:focus {
   margin: auto !important;
 }
 
+input:focus {
+  outline: none !important;
+}
+

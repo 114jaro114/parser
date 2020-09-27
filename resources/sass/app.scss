@@ -38,3 +38,7 @@ white-space: nowrap;
   width: 55% !important;
   margin: auto !important;
 }
+
+input:focus {
+  outline: none !important;
+}
