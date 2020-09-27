@@ -13,7 +13,7 @@
     <h3 align="center"> Import Excel File on upload. Formats: .xlsx, .xls</h3>
     <br />
      @if(count($errors) > 0)
-      <div class="alert alert-danger">
+      <div class="alert alert-danger alert-position">
        Upload Validation Error<br><br>
        <ul>
         @foreach($errors->all() as $error)
@@ -24,7 +24,7 @@
      @endif
 
      @if($message = Session::get('success'))
-     <div class="alert alert-success alert-block">
+     <div class="alert alert-success alert-block .alert-position {">
       <button type="button" class="close" data-dismiss="alert">×</button>
          <strong>{{ $message }}</strong>
      </div>
@@ -33,7 +33,7 @@
      <form method="post" enctype="multipart/form-data" action="{{ url('/import_excel/import') }}">
       {{ csrf_field() }}
       <div class="form-group">
-       <table class="table table-import">
+       <table class="table table-import mt-2">
         <tr>
          <td width="40%" class="align-middle pr-4" align="right"><span>Select File for Upload</span></td>
          <td width="30" class="align-middle">
