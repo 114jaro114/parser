@@ -57,4 +57,15 @@ class UploadFileController extends Controller
       return back()->with('success', 'Súbor bol úspešne uploadnutý');
     }
   }
+
+    function getInvoice(Request $request, $number) {
+      $data = Invoices::where('cislo','=',$number)->get();
+      return view('detail', compact('data'));
+    }
+
+    function getSubjects(Request $request, $subjects) {
+      $data2 = Invoices::where('ico','=',$subjects)->take(1)->get();
+      $data = DB::table('faktury')->where('ico','=',$subjects)->simplePaginate(10);
+      return view('subjekty', compact('data', 'data2'));
+    }
 }

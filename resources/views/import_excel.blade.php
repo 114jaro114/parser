@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="p-5">
-    <h3 align="center"> Importovanie excel súboru na upload. Formáty: .xlsx, .xls, .csv</h3>
+    <h3 align="center"> Importovanie excel súboru na upload. Podporované formáty: .xlsx, .xls, .csv</h3>
     <br />
      @if(count($errors) > 0)
       <div class="alert alert-danger alert-position">
@@ -52,41 +52,88 @@
       </div>
      </form>
 
-     <div class="panel panel-default">
-      <div class="panel-heading">
-       <h3 class="panel-title text-center">Faktúry</h3>
+     <div class="row ml-0 mr-0">
+       <div class="card w-100 mb-5">
+         <div class="card-body p-0">
+           <div class="col-md-12">
+             <h4 class="uppercase text-uppercase font-weight-bold text-center p-3">Faktúry</h4>
+           </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Dátum</th>
+              <th scope="col">Číslo</th>
+              <th scope="col">Predmet</th>
+              <th scope="col">Suma</th>
+              <th scope="col">Dodávateľ</th>
+              <th scope="col">IČO</th>
+              <th scope="col">Adresa</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @foreach($data as $row)
+            <tr>
+              <tr scope="row"></tr>
+              <td class="font-weight-bold">{{ $row->id }}</td>
+              <td>
+                @if ($row->datum != null)
+                {{ $row->datum }}
+                @else
+                ---
+                @endif
+              </td>
+              <td>
+                @if ($row->cislo != null)
+                {{ $row->cislo }}
+                @else
+                ---
+                @endif
+              </td>
+              <td>
+                <a href="/import_excel/{{ $row->cislo }}">
+                  @if ($row->predmet != null)
+                  {{ $row->predmet }}
+                  @else
+                  ---
+                  @endif
+                </a>
+              </td>
+              <td>
+                @if ($row->suma != null)
+                {{ $row->suma }}
+                @else
+                ---
+                @endif
+              </td>
+              <td>
+                @if ($row->dodavatel != null)
+                {{ $row->dodavatel }}
+                @else
+                ---
+                @endif
+              </td>
+              <td>
+                @if ($row->ico != null)
+                {{ $row->ico }}
+                @else
+                ---
+                @endif
+              </td>
+              <td>
+                @if ($row->adresa != null)
+                {{ $row->adresa }}
+                @else
+                ---
+                @endif
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
       </div>
-      <div class="panel-body">
-       <div class="table-responsive">
-         <div class="table-responsive">
-          <table class="table table-bordered table-striped">
-           <tr>
-            <th>ID</th>
-            <th>Dátum</th>
-            <th>Číslo</th>
-            <th>Predmet</th>
-            <th>Suma</th>
-            <th>Dodávateľ</th>
-            <th>IČO</th>
-            <th>Adresa</th>
-           </tr>
-           @foreach($data as $row)
-           <tr>
-            <td>{{ $row->id }}</td>
-            <td>{{ $row->datum }}</td>
-            <td>{{ $row->cislo }}</td>
-            <td>{{ $row->predmet }}</td>
-            <td>{{ $row->suma }}</td>
-            <td>{{ $row->dodavatel }}</td>
-            <td>{{ $row->ico }}</td>
-            <td>{{ $row->adresa }}</td>
-           </tr>
-           @endforeach
-          </table>
-       </div>
-      </div>
-     </div>
-     <div class="text-center pt-3">
+     <div class="text-center pt-3 mb-4">
        {{ $data->Links() }}
      </div>
     </div>

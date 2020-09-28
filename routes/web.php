@@ -20,3 +20,15 @@ Route::get('/', function () {
 
 Route::get('/import_excel', [UploadFileController::class, 'index']);
 Route::post('/import_excel/import', [UploadFileController::class, 'import']);
+
+Route::get('/detail', function () {
+    return view('detail');
+});
+
+Route::get('/subjekty', function () {
+    return view('subjekty');
+});
+
+Route::get('/import_excel/{cislo}', [UploadFileController::class, 'getInvoice']);
+
+Route::get('/subjekty/{dodavatel}', [UploadFileController::class, 'getSubjects']);
