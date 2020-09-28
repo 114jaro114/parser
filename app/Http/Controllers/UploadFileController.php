@@ -16,65 +16,45 @@ class UploadFileController extends Controller
     function index() {
       $data = DB::table('faktury')->simplePaginate(10);
       return view('import_excel', compact('data'));
-      // return view('import_excel');
     }
 
     function import(Request $request) {
-     $this->validate($request, [
-      'select_file'  => 'required|mimes:xls,xlsx'
-     ]);
 
-     // DB::table('faktury')->delete();
-     // Truncate the table.
-     DB::table('faktury')->truncate();
-     $data = Excel::import(new InvoiceImport, $request->file('select_file'));
-     // return back();
-     // $rows = Excel::toArray(new InvoiceImport, $request->file('select_file'));
-     // return response()->json(["data"=>$data]);
+      // Truncate the table.
+      DB::table('faktury')->truncate();
 
-     // if($data->count() > 0)
-     //  {
-     //   foreach($data->toArray() as $key => $value)
-     //   {
-     //    foreach($value as $row)
-     //    {
-     //     $insert_data[] = array(
-     //      'datum'  => $row['datum'],
-     //      'cislo'   => $row['cislo'],
-     //      'predmet'   => $row['predmet'],
-     //      'suma'    => $row['suma'],
-     //      'dodavatel'  => $row['dodavatel'],
-     //      'ico'   => $row['ico'],
-     //      'adresa'   => $row['adresa']
-     //     );
-     //    }
-     //   }
+      $this->validate($request, [
+       'select_file' => 'required|mimes:xls,xlsx,csv,txt'
+      ]);
 
-     // if(count($data) > 0) {
-     //   foreach($data as $key => $value) {
-     //    foreach($value as $row) {
-     //     $insert_data[] = array(
-     //       'datum' => $row['datum'],
-     //       'cislo' => $row['cislo'],
-     //       'predmet' => $row['predmet'],
-     //       'suma' => $row['suma'],
-     //       'dodavatel' => $row['dodavatel'],
-     //       'ico' => $row['ico'],
-     //       'adresa' => $row['adresa']
-     //     );
-     //    }
-     //   }
-     //
-     //
-     // if(!empty($data))
-     // {
-     //   foreach (array_chunk($data,1000) as $t){
-     //     // DB::table('faktury')->insert($t);
-     //     return $t;
-     //   }
-     // }
+     if($request->file('select_file')->getClientMimeType() == "application/vnd.ms-excel") {
+       $data = Excel::toArray(new InvoiceImport, $request->file('select_file'));
+       if(count($data) > 0) {
+         foreach($data as $key => $value) {
+          foreach($value as $row) {
+           $insert_data[] = array(
+             'datum' => $row[0],
+             'cislo' => $row[1],
+             'predmet' => $row[2],
+             'suma' => $row[3],
+             'dodavatel' => $row[4],
+             'ico' => $row[5],
+             'adresa' => $row[6]
+           );
+          }
+        }
 
-     return back()->with('success', 'Excel Data Imported successfully.');
-    // }
+         if(!empty($insert_data)) {
+           foreach (array_chunk($insert_data,1000) as $t) {
+             DB::table('faktury')->insert($t);
+             // return $t;
+           }
+         }
+      }
+      return back()->with('success', 'Súbor bol úspešne uploadnutý');
+    } else {
+      $data = Excel::import(new InvoiceImport, $request->file('select_file'));
+      return back()->with('success', 'Súbor bol úspešne uploadnutý');
+    }
   }
 }

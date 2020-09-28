@@ -22,6 +22,7 @@ class InvoiceImport implements ToModel, WithStartRow, WithBatchInserts, WithChun
     */
     public function model(array $row)
     {
+
         return new Invoices([
           'datum' => (Date::excelToDateTimeObject($row[0])->format('d-m-Y')),
           'cislo' => $row[1],

@@ -10,11 +10,11 @@
 </head>
 <body>
   <div class="p-5">
-    <h3 align="center"> Import Excel File on upload. Formats: .xlsx, .xls</h3>
+    <h3 align="center"> Importovanie excel súboru na upload. Formáty: .xlsx, .xls, .csv</h3>
     <br />
      @if(count($errors) > 0)
       <div class="alert alert-danger alert-position">
-       Upload Validation Error<br><br>
+       Upload chyba:<br><br>
        <ul>
         @foreach($errors->all() as $error)
         <li>{{ $error }}</li>
@@ -24,7 +24,7 @@
      @endif
 
      @if($message = Session::get('success'))
-     <div class="alert alert-success alert-block .alert-position {">
+     <div class="alert alert-success alert-block alert-position">
       <button type="button" class="close" data-dismiss="alert">×</button>
          <strong>{{ $message }}</strong>
      </div>
@@ -35,12 +35,12 @@
       <div class="form-group">
        <table class="table table-import mt-2">
         <tr>
-         <td width="40%" class="align-middle pr-4" align="right"><span>Select File for Upload</span></td>
+         <td width="40%" class="align-middle pr-4" align="right"><span>Vybrať súbor na upload</span></td>
          <td width="30" class="align-middle">
-          <input type="file" name="select_file" />
+          <input type="file" name="select_file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
          </td>
-         <td width="30%" align="left">
-          <input type="submit" name="upload" class="btn btn-primary" value="Upload">
+         <td width="30%" class="align-middle" align="left">
+          <input type="submit" name="upload" class="btn btn-primary" value="Uploadovať">
          </td>
         </tr>
         <tr>
