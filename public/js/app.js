@@ -37285,10 +37285,10 @@ $("#btn-search-by-company_ico").click(function () {
       },
       success: function success(response) {
         window.location.href = cesta2;
-      } // error: function(XMLHttpRequest, textStatus, errorThrown) {
-      //    document.getElementById("name_company-search-error").style.display = "block";
-      // }
-
+      },
+      error: function error(XMLHttpRequest, textStatus, errorThrown) {
+        document.getElementById("name_company-search-error").style.display = "block";
+      }
     });
   }
 
@@ -37300,10 +37300,10 @@ $("#btn-search-by-company_ico").click(function () {
       },
       success: function success(response) {
         window.location.href = cesta;
-      } // error: function(XMLHttpRequest, textStatus, errorThrown) {
-      //    document.getElementById("ico-search-error").style.display = "block";
-      // }
-
+      },
+      error: function error(XMLHttpRequest, textStatus, errorThrown) {
+        document.getElementById("ico-search-error").style.display = "block";
+      }
     });
   } // }
 

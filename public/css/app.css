@@ -15606,7 +15606,8 @@ i.fa-info-circle {
   background-color: white;
 }
 
-#ico-search-error {
+#ico-search-error,
+#name_company-search-error {
   display: none;
 }
 

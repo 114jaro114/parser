@@ -40,16 +40,23 @@
               <div class="col-md-12 pl-0 pr-0 align-items-center text-center">
                 <button class="uppercase text-uppercase font-weight-bold btn btn-primary w-100" data-toggle="collapse" href="#collapse_subject" role="button" aria-expanded="false" aria-controls="collapse_subject"><i class="fa fa-search"></i> Vyhľadávanie detailu zmluvného partnera</button>
               </div>
-              <div class="col-md-12 collapse mt-3 collapse-border-top pt-3" id="collapse_subject">
-                <div class="col-md-12" id="ico-search-error">
+              <div class="col-md-12 collapse mt-3 collapse-border-top pt-3 pl-0 pr-0" id="collapse_subject">
+                <div class="col-md-12 pl-0 pr-0" id="ico-search-error">
                  <div class="alert alert-danger">
                   <button type="button" class="close" data-dismiss="alert">×</button>
                   Neboli nájdené žiadne dáta zmluvného partnera na základe zadaného IČA
                  </div>
                 </div>
+
+                <div class="col-md-12 pl-0 pr-0" id="name_company-search-error">
+                 <div class="alert alert-danger">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  Neboli nájdené žiadne dáta zmluvného partnera na základe zadaného mena spoločnosti
+                 </div>
+                </div>
                 <div class="col-md-10">
                   <div class="form-group row">
-                    <div class="col-3">
+                    <div class="col-3 pl-0">
                       <span class="align-center">IČO (zadajte platné IČO - 8 číslic): </span>
                     </div>
                     <div class="col-8 pl-0 pr-0">
@@ -58,7 +65,7 @@
                   </div>
 
                   <div class="form-group row">
-                    <div class="col-3">
+                    <div class="col-3 pl-0">
                       <span class="align-center">Názov spoločnosti: (zadajte aspoň 3 písmená): </span>
                     </div>
                     <div class="col-8 pl-0 pr-0">
