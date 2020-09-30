@@ -22,7 +22,7 @@ class CreateFakturyTable extends Migration
           $table->string('dodavatel')->nullable();
           $table->string('ico')->nullable();
           $table->string('adresa')->nullable();
-          // $table->timestamps();
+          $table->string('typ')->default("Faktúra");
       });
     }
 

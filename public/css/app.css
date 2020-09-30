@@ -15496,12 +15496,6 @@ a.text-dark:focus {
   white-space: nowrap;
 }
 
-.alert-position {
-  width: 55% !important;
-  margin: auto !important;
-  margin-bottom: 20px !important;
-}
-
 .table-import {
   width: 55% !important;
   margin: auto !important;
@@ -15537,16 +15531,90 @@ input:focus {
   border-bottom: 0.005rem solid rgba(0, 0, 0, 0.125);
 }
 
-.fa-arrow-alt-circle-left {
+.fa-arrow-alt-circle-left,
+.fa-home,
+.fa-info-circle {
   transition: transform 0.4s;
   transform: scale(1);
   font-size: 36px;
-  color: black !important;
+  color: #595959 !important;
 }
 
-.fa-arrow-alt-circle-left:hover {
+.fa-arrow-alt-circle-left:hover,
+.fa-home:hover,
+.fa-info-circle:hover {
   color: rgba(0, 0, 0, 0.125) !important;
   transform: scale(1.3);
   transition: 0.5s ease-out;
+}
+
+i.fa-info-circle {
+  font-size: 48px !important;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.choose-invoices-by-year {
+  width: 250px;
+}
+
+.collapse-border-top {
+  border-top: 0.005rem solid rgba(0, 0, 0, 0.125);
+}
+
+.span-width {
+  width: 135px;
+}
+
+.results {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+.facebook {
+  color: #3490dc;
+  font-size: 30px;
+  margin-top: -3px;
+}
+
+.facebook:hover {
+  color: #165283;
+}
+
+.instagram {
+  color: #e3342f;
+  font-size: 30px;
+  margin-top: -3px;
+}
+
+.instagram:hover {
+  color: #b41e18;
+}
+
+.footer {
+  background-color: #e9ecef;
+  height: 300px;
+}
+
+.navbar {
+  height: 80px;
+  position: static;
+  z-index: 16;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2) !important;
+  background-color: white;
+}
+
+#ico-search-error {
+  display: none;
+}
+
+#breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
 }
 

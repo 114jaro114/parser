@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "958367d23b8c63a4560683324a7e4214",
+    "content-hash": "e050539af4f27b65a2d29deed5237f13",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1416,6 +1416,48 @@
                 }
             ],
             "time": "2020-09-21T18:10:53+00:00"
+        },
+        {
+            "name": "lubosdz/parser-orsr",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lubosdz/parser-orsr.git",
+                "reference": "8b66b63152f2105b9c36cb727af2cf542d6c71e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lubosdz/parser-orsr/zipball/8b66b63152f2105b9c36cb727af2cf542d6c71e6",
+                "reference": "8b66b63152f2105b9c36cb727af2cf542d6c71e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "lubosdz\\parserOrsr\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "lubosdz"
+                }
+            ],
+            "description": "Parser obchodneho registra - orsr.sk. (Parser for Slovak business register)",
+            "keywords": [
+                "XML DOM parser",
+                "obchodny register",
+                "orsr",
+                "parser",
+                "slovak business register"
+            ],
+            "time": "2020-08-25T12:03:59+00:00"
         },
         {
             "name": "maatwebsite/excel",

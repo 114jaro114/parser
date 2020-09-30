@@ -107,6 +107,10 @@ class ComposerStaticInit8273c6ca25afd9ff556966474edc373a
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'l' => 
+        array (
+            'lubosdz\\parserOrsr\\' => 19,
+        ),
         'Z' => 
         array (
             'ZipStream\\' => 10,
@@ -261,6 +265,10 @@ class ComposerStaticInit8273c6ca25afd9ff556966474edc373a
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'lubosdz\\parserOrsr\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lubosdz/parser-orsr',
         ),
         'ZipStream\\' => 
         array (
@@ -631,6 +639,8 @@ class ComposerStaticInit8273c6ca25afd9ff556966474edc373a
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DetailInvoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/DetailInvoiceController.php',
+        'App\\Http\\Controllers\\OrsrController' => __DIR__ . '/../..' . '/app/Http/Controllers/OrsrController.php',
         'App\\Http\\Controllers\\UploadFileController' => __DIR__ . '/../..' . '/app/Http/Controllers/UploadFileController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -5569,6 +5579,8 @@ class ComposerStaticInit8273c6ca25afd9ff556966474edc373a
         'ZipStream\\Option\\Version' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Option/Version.php',
         'ZipStream\\Stream' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Stream.php',
         'ZipStream\\ZipStream' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/ZipStream.php',
+        'lubosdz\\parserOrsr\\ConnectorOrsr' => __DIR__ . '/..' . '/lubosdz/parser-orsr/ConnectorOrsr.php',
+        'lubosdz\\parserOrsr\\_Array2XML' => __DIR__ . '/..' . '/lubosdz/parser-orsr/ConnectorOrsr.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

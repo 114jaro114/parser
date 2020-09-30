@@ -14,12 +14,123 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-      <div class="app align-middle m-5">
-        <div class="detail-header header-height mb-5">
-          <a href="/import_excel">
-            <i class="far fa-arrow-alt-circle-left"></i>
-          </a>
+      <div class="detail-header navbar header-height pr-5 pl-5">
+        <i class="far fa-arrow-alt-circle-left" id="arrow_back"></i>
+        <a href="/import_excel" class="float-right">
+          <i class="fas fa-home"></i>
+        </a>
+      </div>
+
+      <div class="pt-5 pr-5 pb-2 pl-5">
+        <!-- Breadcrumb -->
+          <span id="breadcrumb" class="p-2 mb-3">
+            <span class="breadcrumb-item"><a href="/import_excel">import_excel</a></span>
+            <span class="breadcrumb-item active">detail</span>
+            <span class="breadcrumb-item active" aria-current="page">
+                @foreach($data as $row)
+                {{ $row->cislo }}
+                @endforeach
+            </span>
+          </span>
+        <!-- /Breadcrumb -->
+
+        <div class="card w-100 mb-3">
+          <div class="card-body p-3">
+            <div class="row ml-0 mr-0">
+              <div class="col-md-12 pl-0 pr-0 align-items-center text-center">
+                <button class="uppercase text-uppercase font-weight-bold btn btn-primary w-100" data-toggle="collapse" href="#collapse_subject" role="button" aria-expanded="false" aria-controls="collapse_subject"><i class="fa fa-search"></i> Vyhľadávanie detailu zmluvného partnera</button>
+              </div>
+              <div class="col-md-12 collapse mt-3 collapse-border-top pt-3" id="collapse_subject">
+                <div class="col-md-12" id="ico-search-error">
+                 <div class="alert alert-danger">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  Neboli nájdené žiadne dáta zmluvného partnera na základe zadaného IČA
+                 </div>
+                </div>
+                <div class="col-md-10">
+                  <div class="form-group row">
+                    <div class="col-3">
+                      <span class="align-center">IČO (zadajte platné IČO - 8 číslic): </span>
+                    </div>
+                    <div class="col-8 pl-0 pr-0">
+                      <input type="text" id="company_ico" class="form-control" placeholder="napr. 12345678" maxlength="8">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-3">
+                      <span class="align-center">Názov spoločnosti: (zadajte aspoň 3 písmená): </span>
+                    </div>
+                    <div class="col-8 pl-0 pr-0">
+                      <input type="text" id="byCompanyName" class="form-control ui-autocomplete-input" name="byCompanyName" maxlength="30" placeholder="napr. O2 Slovakia, s.r.o." autocomplete="off">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <form autocomplete="off">
+                    <div class="row">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-8 pl-0 pr-0">
+                        <button id="btn-search-by-company_ico" type="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Hľadať</button>
+                      </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- <div class="app align-middle m-5">
+          <div class="detail-header header-height mb-5">
+            <a href="/import_excel">
+              <i class="far fa-arrow-alt-circle-left"></i>
+            </a>
+          </div>
+
+          <div class="cms-blockquote col-md-10"> -->
+          	<!-- <div class="form-group">
+
+          		<label for="byIco">podľa IČO (zadajte platné IČO - 8 číslic):</label>
+          				<input type="text" id="byIco" class="form-control" placeholder="napr. 12345678" maxlength="8">
+
+
+          	</div>
+          	<div class="form-group">
+
+          		<label for="companyName">podľa názvu spoločnosti: (zadajte aspoň 3 písmená)</label>
+
+          		<input type="text" id="byCompanyName" class="form-control ui-autocomplete-input" name="byCompanyName" maxlength="30" placeholder="napr. Kerametal" autocomplete="off">
+          	</div>
+          	<div class="form-group">
+
+          		<label for="surname">podľa priezviska a mena:</label>
+          		<a tabindex="-1" class="css_tooltip mx-1 float-right">
+          			<i class="fa fa-info-circle fa-12x"></i>
+          			<span style="left: -150px; top: -60px;">Vyhľadávanie v ORSR zohľadňuje diakritiku.</span>
+          		</a>
+
+          		<form autocomplete="off">
+          		<div class="row">
+          			<div class="col-md-4 pr-md-1">
+          				<input type="text" id="lastname" class="form-control" placeholder="napr. Novák" maxlength="30">
+          			</div>
+          			<div class="col-md-4 px-md-1">
+          				<input type="text" id="firstname" class="form-control" placeholder="napr. Ján" maxlength="20">
+          			</div>
+          			<div class="col-md-4 pl-md-1">
+          				<button id="btn-search-by-lastname" type="button" class="btn u-btn-primary btn-block"><i class="fa fa-search"></i>  Hľadať</button>
+          			</div>
+          		</div>
+          		</form>
+          	</div> -->
+            <!-- <input type="text" id="company_ico" maxlength="8" />
+          </div> -->
+
+          <!-- <div class="footer p-4">
+            <footer-body></footer-body>
+          </div> -->
 
         <div class="detail-body flex-center position-ref body-height text-center">
           <div class="row gutters-sm ml-0 mr-0">
@@ -64,26 +175,30 @@
                           <p class="text-secondary mb-1 text-uppercase">Názov</p>
                         </div>
                         <div class="col-md-12 pb-2">
-                          <a href="/subjekty/{{ $row->ico }}">
-                            @if ($row->dodavatel != null)
-                            <span>{{ $row->dodavatel }}</span>
+                          @if ($row->dodavatel != null)
+                            @if ($row->ico != null)
+                            <a href="{{url()->current()}}/subjekty/{{ $row->ico }}">
+                              <span>{{ $row->dodavatel }}</span>
+                            </a>
                             @else
-                            <span>---</span>
+                              <span>{{ $row->dodavatel }}</span>
                             @endif
-                          </a>
+                          @else
+                          <span>---</span>
+                          @endif
                         </div>
 
                         <div class="col-md-12">
                           <p class="text-secondary mb-1 text-uppercase">IČO</p>
                         </div>
                         <div class="col-md-12 pb-2">
-                          <a href="/subjekty/{{ $row->ico }}">
-                            @if ($row->ico != null)
+                          @if ($row->ico != null)
+                          <a href="{{url()->current()}}/subjekty/{{ $row->ico }}">
                             <span>{{ $row->ico }}</span>
-                            @else
-                            <span>---</span>
-                            @endif
                           </a>
+                          @else
+                          <span>---</span>
+                          @endif
                         </div>
 
                         <div class="col-md-12">
@@ -103,7 +218,7 @@
               </div>
             </div>
 
-            <div class="col-md-8 mb-3">
+            <div class="col-md-8 mb-3 pr-0">
               <div class="card mb-3">
                 <div class="card-body p-0">
                   <div class="row">
@@ -192,10 +307,18 @@
             </div>
             @endforeach
         </div>
-
-        <!-- <div class="footer p-4">
-          <footer-body></footer-body>
-        </div> -->
       </div>
-    </body>
+    </div>
+    <div class="footer w-100 pl-5 pr-5">
+      <div class="pt-3">
+        <div class="float-left">
+          © 2020 J. Balent, M. Kundrák, M. Jurík. Všetky práva vyhradené.
+        </div>
+        <div class="float-right">
+          <i class="fab fa-instagram pr-2 instagram"></i>
+          <i class="fab fa-facebook-square facebook"></i>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

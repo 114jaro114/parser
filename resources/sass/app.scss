@@ -1,46 +1,37 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-@import '~@fortawesome/fontawesome-free/css/all.css';
-// Variables
-@import 'variables';
-
-// Bootstrap
+@import '~@fortawesome/fontawesome-free/css/all.css'; // Variables
+@import 'variables'; // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
 #customFile .custom-file-input:lang(en)::after {
-content: "Select file...";
+    content: "Select file...";
 }
 
 #customFile .custom-file-input:lang(en)::before {
-content: "Click me";
+    content: "Click me";
 }
-
 /*when a value is selected, this class removes the content */
+
 .custom-file-input.selected:lang(en)::after {
-content: "" !important;
+    content: "" !important;
 }
 
 .custom-file {
-overflow: hidden;
-}
-.custom-file-input {
-white-space: nowrap;
+    overflow: hidden;
 }
 
-.alert-position {
-  width: 55% !important;
-  margin: auto !important;
-  margin-bottom: 20px !important;
+.custom-file-input {
+    white-space: nowrap;
 }
 
 .table-import {
-  width: 55% !important;
-  margin: auto !important;
+    width : 55% !important;
+    margin: auto !important;
 }
 
 input:focus {
-  outline: none !important;
+    outline: none !important;
 }
 
 .card {
@@ -48,36 +39,113 @@ input:focus {
 }
 
 .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
+    position        : relative;
+    display         : flex;
+    flex-direction  : column;
+    min-width       : 0;
+    word-wrap       : break-word;
     background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+    background-clip : border-box;
+    border          : 0 solid rgba(0,0,0,.125);
+    border-radius   : 0.25rem;
 }
 
 .card-body {
-    flex: 1 1 auto;
+    flex      : 1 1 auto;
     min-height: 1px;
-    padding: 1rem;
+    padding   : 1rem;
 }
 
 .card-border-bottom {
-  border-bottom: 0.005rem solid rgba(0, 0, 0, 0.125);
+    border-bottom: 0.005rem solid rgba(0, 0, 0, 0.125);
 }
 
-.fa-arrow-alt-circle-left {
-  transition: transform .4s;
-  transform: scale(1);
-  font-size: 36px;
-  color: rgb(0, 0, 0) !important;
+.fa-arrow-alt-circle-left,
+.fa-home,
+.fa-info-circle {
+    transition: transform 0.4s;
+    transform : scale(1);
+    font-size : 36px;
+    color     : rgb(89, 89, 89) !important;
 }
 
-.fa-arrow-alt-circle-left:hover {
-  color: rgba(0, 0, 0, 0.125) !important;
-  transform: scale(1.3);
-  transition: 0.5s ease-out;
+.fa-arrow-alt-circle-left:hover,
+.fa-home:hover,
+.fa-info-circle:hover {
+    color     : rgba(0, 0, 0, 0.125) !important;
+    transform : scale(1.3);
+    transition: 0.5s ease-out;
+}
+
+i.fa-info-circle {
+    font-size: 48px !important;
+    position : absolute;
+    top      : 15px;
+    left     : 15px;
+}
+
+.choose-invoices-by-year {
+    width: 250px;
+}
+
+.collapse-border-top {
+    border-top: 0.005rem solid rgba(0, 0, 0, 0.125);
+}
+
+.span-width {
+    width: 135px;
+}
+
+.results {
+    position: absolute;
+    top     : 15px;
+    left    : 10px;
+}
+//footer
+
+.facebook {
+    color     : #3490dc;
+    font-size : 30px;
+    margin-top: -3px;
+}
+
+.facebook:hover {
+    color: #165283;
+}
+
+.instagram {
+    color     : #e3342f;
+    font-size : 30px;
+    margin-top: -3px;
+}
+
+.instagram:hover {
+    color: #b41e18;
+}
+
+.footer {
+    background-color: #e9ecef;
+    height          : 300px;
+}
+// Header sticky
+
+.navbar {
+    height          : 80px;
+    position        : static;
+    z-index         : 16;
+    box-shadow      : 0 0.125rem 0.25rem rgba(0,0,0, 0.2) !important;
+    background-color: rgb(255, 255, 255);
+}
+
+#ico-search-error {
+    display: none;
+}
+//breadcrumb
+
+#breadcrumb {
+    display         : flex;
+    flex-wrap       : wrap;
+    list-style      : none;
+    background-color: #e9ecef;
+    border-radius   : 0.25rem;
 }
